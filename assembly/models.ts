@@ -19,65 +19,28 @@ export class FunctionCallPermission {
     }
 }
 
-// /// Lowest level action that can be performed by the multisig contract.
-// @nearBindgen
-// export class MultiSigRequestAction {
-//     amount: u128;
-//     code: Uint8Array;
-//     public_key: Uint8Array;
-   
-//     constructor(
-//         amount: u128,
-//         code: Uint8Array,
-//         public_key: Uint8Array
-//     ) {
-
-//     }
-
-//     Transfer(amount: u128): u128 {
-//         return amount
-//     }
-
-//     CreateAccount(): void {}
-
-//     DeployContract(code: Uint8Array): Uint8Array {
-//         return code
-//     }
-
-//     AddKey(public_key: Uint8Array, permission: FunctionCallPermission)
-
-// }
 export enum MultiSigRequestAction {
     /// Transfers given amount to receiver.
-    Transfer, // amount: u128
+    Transfer,
 
     /// Create a new account
     CreateAccount,
 
     /// Deploys contract to receiver's account. Can upgrade given contract as well.
-    DeployContract, // code: Base64VecU8
+    DeployContract,
 
     /// Adds key, either new key for multisig or full access key to another account.
-     AddKey, // {
-                //     public_key: Base58PublicKey,
-                //     #[serde(skip_serializing_if = "Option::is_none")]
-                //     permission: Option<FunctionCallPermission>,
-                // },
+    AddKey, 
 
     /// Deletes key, either one of the keys from multisig or key from another account.
-    DeleteKey, // { public_key: Base58PublicKey },
+    DeleteKey, 
 
     /// Call function on behalf of this contract.
-    FunctionCall, //{
-                    //     method_name: String,
-                    //     args: Base64VecU8,
-                    //     deposit: U128,
-                    //     gas: U64,
-                    // },
+    FunctionCall,
 
     /// Sets number of confirmations required to authorize requests.
     /// Can not be bundled with any other actions or transactions.
-    SetNumConfirmations, // { num_confirmations: u32 },
+    SetNumConfirmations,
 
     /// Sets number of active requests (unconfirmed requests) per access key
     /// Default is 12 unconfirmed requests at a time

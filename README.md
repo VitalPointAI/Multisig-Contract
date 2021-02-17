@@ -1,7 +1,7 @@
-multisig Smart Contract
+MultiSig Contract
 ==================
 
-A [smart contract] written in [AssemblyScript] for an app initialized with [create-near-app]
+A [smart contract] written in [AssemblyScript] for an app initialized with [create-near-app].  One of the NEAR Protocol core contracts and part of the complete series covering [NEAR Core Contracts written in AssemblyScript] (https://vitalpoint.ai/course/multisig-contract/) by [Vital Point Academy](https://vitalpoint.ai/academy)
 
 
 Quick Start
@@ -17,10 +17,3 @@ Exploring The Code
    it with the `./compile` script.
 2. Tests: You can run smart contract tests with the `./test` script. This runs
    standard AssemblyScript tests using [as-pect].
-
-
-  [smart contract]: https://docs.near.org/docs/roles/developer/contracts/intro
-  [AssemblyScript]: https://www.assemblyscript.org/
-  [create-near-app]: https://github.com/near/create-near-app
-  [Node.js]: https://nodejs.org/en/download/package-manager/
-  [as-pect]: https://www.npmjs.com/package/@as-pect/cli
